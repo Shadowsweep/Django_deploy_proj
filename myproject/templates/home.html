@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 2.5rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            text-align: center;
+        }
+        .home-title {
+            font-size: 3rem; /* text-5xl */
+            font-weight: 800; /* font-extrabold */
+            color: #1a202c; /* text-gray-900 */
+            margin-bottom: 2rem;
+            letter-spacing: -0.025em; /* tracking-tight */
+        }
+        .nav-button {
+            display: inline-block;
+            background-color: #6366f1; /* bg-indigo-600 */
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 0.75rem; /* rounded-xl */
+            font-weight: 700; /* font-bold */
+            font-size: 1.125rem; /* text-lg */
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        }
+        .nav-button:hover {
+            background-color: #4f46e5; /* bg-indigo-700 */
+            transform: translateY(-2px);
+        }
+        .nav-button:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="home-title">Home Page</h1>
+        <div class="space-y-6">
+            <a href="{% url 'entry_list' %}" class="nav-button">View Entries</a>
+            <a href="{% url 'add_entry' %}" class="nav-button">Create New Entry</a>
+        </div>
+    </div>
+</body>
+</html>
