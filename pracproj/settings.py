@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-izoz)9z!b8m&-22y+ln2t%*fnfgwh*1a+l5dh50c#q-#0zqx_r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG" , "False").lower() == "true"
 
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Application definition
@@ -40,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myproject',
+    'myproject'
 ]
 
 MIDDLEWARE = [
@@ -88,14 +87,10 @@ DATABASES = {
 
 
 # For Deployment on render we are using internal connection as follows :
-# DATABASE_URL = 'postgresql://sample_postgres_db_django_user:tSwHNM7aGfFJp1xfmrPV4Wa9SlLcPvQX@dpg-d1uuks6mcj7s73eseglg-a.oregon-postgres.render.com/sample_postgres_db_django'
-# database_url = os.environ.get("DATABASE_URL")
+database_url = os.environ.get("DATABASE_URL")
 
 # This is for External connection 
-# DATABASES["default"] = dj_database_url.parse(database_url)
 DATABASES["default"] = dj_database_url.parse("postgresql://sample_postgres_db_django_user:tSwHNM7aGfFJp1xfmrPV4Wa9SlLcPvQX@dpg-d1uuks6mcj7s73eseglg-a.oregon-postgres.render.com/sample_postgres_db_django")
-
-# postgresql://sample_postgres_db_django_user:tSwHNM7aGfFJp1xfmrPV4Wa9SlLcPvQX@dpg-d1uuks6mcj7s73eseglg-a.oregon-postgres.render.com/sample_postgres_db_django
 
 # DATABASES = {
 #     'default': {
